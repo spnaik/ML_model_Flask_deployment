@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Deployment example using Flask</title>   
+</head>
+
+<body style="background: rgb(240, 238, 238);">
+
+ <div>
+        <h1>Fruit classification</h1>
+
+        <form action="{{ url_for('predict')}}"method="post">
+            <label for="mass">mass:</label>            
+            <input type="text" name="mass" placeholder="mass" required="required" /> <br><br>
+            <label for="width">width:</label>
+            <input type="text" name="width" placeholder="width" required="required" /><br><br>
+            <label for="height">height:</label> 
+		    <input type="text" name="height" placeholder="height" required="required" /><br><br>
+            <label for="color_score">color_score:</label> 
+		    <input type="text" name="color_score" placeholder="color_score" required="required" /><br><br>
+
+
+             <button type="submit">Fruit classification</button>
+        </form>
+        <br><br>
+        {{ prediction_text }}
+        
+
+ </div>
+</body>
+</html>
